@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Total Trip</title>
+    <meta name="keywords" content="travelling, world, trip, travel in
+                        europe, destination">
+    <meta name="author" content="Alvaro de Castro Escribano">
+    <meta name="description" content="The Total TTrip website
+                provides all the useful information to travel around
+                the world, and also previous experiences in the most
+                amazing places of Europe">
+    <meta property="article:published_time" content="2022-10-10">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/default.css" rel="stylesheet" type="text/css">
+    <script src="scripts/scripts.js"></script>
+</head>
+<body>
+<!--start header-->
+<div class="header">
+    <img id="back-img" src="images/background.png">
+    <div id="logo">
+        <h1><a href="#">Total Trip</a></h1>
+    </div>
+    <div id="navbar">
+        <ul>
+            <li><a href="#" class="navbar-button">Home</a></li>
+            <li class="dropdown">
+                <a href="destinations.html" class="navbar-button">Destinations</a>
+                <div class="dropdown-content">
+                    <a href="destinations.html#spain">Spain</a>
+                    <a href="destinations.html#italy">Italy</a>
+                    <a href="destinations.html#germany">Germany</a>
+                    <a href="destinations.html#portugal">Portugal</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="experiences.html" class="navbar-button">Experiences</a>
+                <div class="dropdown-content">
+                    <a href="experiences/rome.html">Rome</a>
+                </div>
+            </li>
+            <li><a href="contact.html" class="navbar-button">Contact</a>
+            </li><li><a href="#" class="navbar-button">About us</a>
+        </li>
+
+        </ul>
+    </div>
+    <div class="search">
+        <button type="submit" class="search-button" onclick="alertNoResult()">
+            <img class="search-icon" src="images/login.png"
+                 alt="search_icon">
+        </button>
+    </div>
+</div>
+<!--end header-->
+<!--start page-->
+<div class="page" id="index">
+    <h3>Plan your dream trip</h3>
+    <div class="buttons">
+        <button id="flightButton" onclick=changeTripPlanning(this.id)>Flights</button>
+        <button id="accommodationButton"onclick=changeTripPlanning(this.id)>Accommodation</button>
+        <button id="eventButton" onclick=changeTripPlanning(this.id)>Events</button>
+        <button id="eatingButton" onclick=changeTripPlanning(this.id)>Places to eat</button>
+<!--        <button id="allButton" onclick=changeTripPlanning(this.id)>Show all</button>-->
+    </div>
+    <div class="search-box">
+        <div class="form-div">
+            <form>
+                <fieldset class="feature" id="search-flights">
+                    <legend>Search your flights</legend>
+                    <div class="buttons-line">
+                        <label class="button-label" for="returnFlight">Return</label>
+                        <input class="form-radio" type="radio" id="returnFlight"
+                               onchange="checkTravelStyle(this)" checked>
+                        <label class="button-label" for="oneWayFlight">One way</label>
+                        <input class="form-radio" type="radio" id="oneWayFlight"
+                               onchange="checkTravelStyle(this)">
+                        <label class="button-label" for="multiCityFlight">Multi-city</label>
+                        <input class="form-radio" type="radio" id="multiCityFlight"
+                        onchange="showMultiCity(this.checked)
+                                    && checkTravelStyle(this)">
+                        <label class="button-label" for="from">Direct flights only
+                        </label>
+                        <input class="form-check" type="checkbox">
+                        <div id="hidden-box">
+                            <label class="hidden-label" for="from">How many?</label>
+                            <input class="num-dest" type="number" max="5" min="1">
+                        </div>
+                    </div>
+                    <div class="form-line" style="float:left;">
+                        <label class="form-label" for="from">From:</label>
+                        <input class="form-input" type="text" name="from" id="from">
+                    </div>
+                    <div class="form-line" style="float: right">
+                        <label class="form-label" for="to">To:</label>
+                        <input class="form-input" type="text" name="to" id="to">
+                    </div>
+                    <div class="form-line" style="float:left;">
+                        <label class="form-label" for="dep_date">Date:</label>
+                        <input class="form-input" type="date" name="dep_date" id="dep_date">
+                    </div>
+                    <div class="form-line" style="float: right">
+                        <label class="form-label" for="arr_date">Date:</label>
+                        <input class="form-input" type="date" name="arr_date" id="arr_date">
+                    </div>
+                </fieldset>
+                <fieldset class="feature" id="search-accommodation" style="display: none">
+                    <legend>Search your accomodation</legend>
+                    <div class="buttons-line">
+                        <label class="button-label" for="hotelAccom">Hotel</label>
+                        <input class="form-radio" type="checkbox" id="hotelAccom" checked>
+                        <label class="button-label" for="hostelAccom">Hostel</label>
+                        <input class="form-radio" type="checkbox" id="hostelAccom">
+                        <label class="button-label" for="houseAccom">House</label>
+                        <input class="form-radio" type="checkbox" id="houseAccom">
+                    </div>
+                    <div class="form-line" style="width: 100%">
+                        <label class="form-label" for="from">Where to stay?</label>
+                        <input class="form-input" type="text" name="where" id="where"
+                        style="width: 90%">
+                    </div>
+                    <div class="form-line" style="float:left;">
+                        <label class="form-label" for="dep_date">Check in:</label>
+                        <input class="form-input" type="date" name="checkin" id="checkin">
+                    </div>
+                    <div class="form-line" style="float: right">
+                        <label class="form-label" for="arr_date">Check out:</label>
+                        <input class="form-input" type="date" name="checkout" id="checkout">
+                    </div>
+                </fieldset>
+                <fieldset class="feature" id="search-events" style="display: none">
+                    <legend>Search events</legend>
+                    <div class="buttons-line">
+                        <label class="button-label">Party</label>
+                        <input class="form-radio" type="checkbox" id="partyEvent">
+                        <label class="button-label">Music</label>
+                        <input class="form-radio" type="checkbox" id="musicEvent">
+                        <label class="button-label">Culture</label>
+                        <input class="form-radio" type="checkbox" id="cultureEvent">
+                        <label class="button-label">Tours</label>
+                        <input class="form-radio" type="checkbox" id="tourEvent">
+                    </div>
+                    <div class="form-line" style="width: 100%">
+                        <label class="form-label" for="from">Which place?</label>
+                        <input class="form-input" type="text" name="where" id="whichPlace"
+                               style="width: 90%">
+                    </div>
+                    <div class="form-line" style="width: 100%">
+                        <label class="form-label" for="from">Which date?</label>
+                        <input class="form-input" type="date" name="where" id="whichDate"
+                               style="width: 90%">
+                    </div>
+                </fieldset>
+                <fieldset class="feature" id="search-eating" style="display: none">
+                    <legend>Search places to eat</legend>
+                    <div class="buttons-line">
+                        <label class="button-label">Traditional food</label>
+                        <input class="form-radio" type="checkbox" id="trad">
+                        <label class="button-label">Fast food</label>
+                        <input class="form-radio" type="checkbox" id="fast">
+                        <label class="button-label">International food</label>
+                        <input class="form-radio" type="checkbox" id="international">
+                    </div>
+                    <div class="form-line" style="width: 100%">
+                        <label class="form-label" for="from">Which place?</label>
+                        <input class="form-input" type="text" name="where" id="city"
+                               style="width: 90%">
+                    </div>
+                </fieldset>
+                <div class="button">
+                    <button class="form-button" type="button">SEARCH</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="offered-services">
+        <h3><a href="destinations.html">What do we offer</a>
+        </h3>
+        <div class="gallery">
+            <div class="gallery-photo">
+                <a target="_blank" href="#">
+                    <div class="grey-box">Flights</div>
+                    <img src="images/plane.jpg" alt="Flights">
+                </a>
+            </div>
+            <div class="gallery-photo">
+                <a target="_blank" href="#">
+                    <div class="grey-box">Places to eat</div>
+                    <img src="images/food.jpg" alt="Places to eat">
+                </a>
+            </div>
+            <div class="gallery-photo">
+                <a target="_blank" href="#">
+                    <div class="grey-box">Events</div>
+                    <img src="images/event.jpg" alt="Events">
+                </a>
+            </div>
+            <div class="gallery-photo">
+                <a target="_blank" href="#">
+                    <div class="grey-box">Places to visit</div>
+                    <img src="images/places.jpg" alt="Places to visit">
+                </a>
+            </div>
+            <div class="gallery-photo">
+                <a target="_blank" href="#">
+                    <div class="grey-box">Accommodation</div>
+                    <img src="images/stay.jpg" alt="Accommodation">
+                </a>
+            </div>
+            <div class="gallery-photo">
+                <a target="_blank" href="#">
+                    <div class="grey-box">Weather</div>
+                    <img src="images/weather.jpg" alt="Weather">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="loved-destinations">
+        <h3><a href="destinations.html">Most loved destinations</a>
+        </h3>
+        <div class="gallery">
+            <div class="gallery-photo">
+                <a target="_blank" href="destinations.html#spain">
+                    <div class="grey-box">Spain</div>
+                    <img src="images/madrid.jpg" alt="Spain">
+                </a>
+            </div>
+            <div class="gallery-photo">
+                <a target="_blank" href="destinations.html#italy">
+                    <div class="grey-box">Italy</div>
+                    <img src="images/rome.jpg" alt="Italy">
+                </a>
+            </div>
+            <div class="gallery-photo">
+                <a target="_blank" href="destinations.html#portugal">
+                    <div class="grey-box">Portugal</div>
+                    <img src="images/lisbon.jpg" alt="Portugal">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="welcome-post">
+        <div class="post">
+            <h2 class="post-title">Welcome to Total Trip</h2>
+            <p class="post-info">Posted by Total Trip Team on November 01, 2022
+            </p>
+            <p class="post-content">
+                Are you willing to travel? Everyone could plan a vacation nowadays.
+                However, taking the great amount of time to navigate all through the
+                web and plan every single detail is not in everyone's hand. In order
+                to make the trip planning experience more pleasant for the customer,
+                our website project offers helpful filtering like
+                <a href="#">real-time weather</a>
+                service, <a href="#">recommendations</a> about the destination based on our algorithm
+                that chooses among different users rating, <a href="#">places to eat traditional
+                foods</a>  choosing the best price and user evaluation, the best ways of
+                <a href="#">transport</a> to get around, where to accommodate and earlier user
+                <a href="#">experiences</a>
+                allocated in the specifically designed database, all in one, so there
+                is no need any more to worry about planning your vacations, it will all
+                be done for you! </p>
+        </div>
+    </div>
+</div>
+<!--end page-->
+<!--start footer-->
+<div class="footer">
+    <div class="legal">
+        <p>&copy;2022 Total Trip. All rights reserved. Designed by
+                Total Trip Designer Team.</p>
+    </div>
+    <div class="resources">
+        <a href="#">Page Map</a>
+        <a href="#" >Mobile version</a>
+        <a href="#" >Help</a>
+        <a href="#" >Privacy</a>
+        <a href="#" >Terms & conditions</a>
+    </div>
+    <div class="contact-buttons">
+        <ul>
+            <li><a href="contact.html" class="social-media"><img src="images/Linkedin.png" alt="linkedin"></a></li>
+            <li><a href="contact.html" class="social-media"><img src="images/instagram.png" alt="instagram"></a></li>
+            <li><a href="contact.html" class="social-media"><img src="images/facebook.png" alt="facebook"></a></li>
+            <li><a href="contact.html" class="social-media"><img src="images/twitter.png" alt="twitter"></a></li>
+            <li><a href="contact.html" class="social-media"><img src="images/email.png" alt="email">
+            </a></li>
+        </ul>
+    </div>
+
+</div>
+<!--end footer-->
+</body>
+</html>

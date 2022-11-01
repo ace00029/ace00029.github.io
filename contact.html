@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact form</title>
+    <meta name="author" content="Alvaro de Castro Escribano">
+    <meta name="description" content="The Total TTrip website
+                provides all the useful information to travel around
+                the world, and also previous experiences in the most
+                amazing places of Europe">
+    <meta property="article:published_time" content="2022-10-10">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/original.css" rel="stylesheet" type="text/css">
+    <script src="scripts/scripts.js"></script>
+</head>
+<body>
+<!--start header-->
+<div class="header">
+    <div id="logo">
+        <h1><a href="index.html">Total Trip</a></h1>
+    </div>
+    <div id="navbar">
+        <ul>
+            <li><a href="index.html" class="navbar-button">Home</a></li>
+            <li class="dropdown">
+                <a href="destinations.html" class="navbar-button">Destinations</a>
+                <div class="dropdown-content">
+                    <a href="destinations.html#spain">Spain</a>
+                    <a href="destinations.html#italy">Italy</a>
+                    <a href="destinations.html#germany">Germany</a>
+                    <a href="destinations.html#portugal">Portugal</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="experiences.html" class="navbar-button">Experiences</a>
+                <div class="dropdown-content">
+                    <a href="experiences/rome.html">Rome</a>
+                </div>
+            </li>
+            <li><a href="contact.html" class="navbar-button">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <div class="search">
+        <input type="text" class="search-box"
+               placeholder="What are you looking for?">
+        <button type="submit" class="search-button" onclick="alertNoResult()">
+            <img class="search-icon" src="images/searchIcon.png"
+                 alt="search_icon">
+        </button>
+    </div>
+</div>
+<!--end header-->
+<!--start page-->
+<div class="page" id="contact">
+    <div class="contact-info">
+        <h3>Want to talk to us? Just send a message!</h3>
+    </div>
+    <div class="form-div">
+        <form>
+            <fieldset>
+                <legend>Personal data</legend>
+                <div class="form-line">
+                    <label class="form-label" for="name">Name:</label>
+                    <input class="form-input" type="text" name="name" id="name">
+                </div>
+                <div class="form-line">
+                    <label class="form-label" for="surname">Surname:</label>
+                    <input class="form-input" type="text" name="surname" id="surname">
+                </div>
+                <div class="form-line">
+                    <label class="form-label" for="email">Email:</label>
+                    <input class="form-input" type="text" name="email" id="email">
+                </div>
+                <div class="form-line">
+                    <label for="country">Select your country: </label>
+                    <select name="country" id="country"
+                            onchange="checkCountry(this.value);">
+                        <option value="italy">Italy</option>
+                        <option value="latvia">Latvia</option>
+                        <option value="lithuania" selected>Lithuania</option>
+                        <option value="portugal">Portugal</option>
+                        <option value="spain">Spain</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <input type="text" name="country" id="alt_country"
+                           class="form-input" style="display: none"
+                            placeholder="Which is your country then?">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Email content</legend>
+            <div class="form-line">
+                <label class="form-label" for="subject">Subject:</label>
+                <input class="form-input" list="common-subjects" name="subject" id="subject">
+                <datalist id="common-subjects">
+                    <option value="Bugs">
+                    <option value="More information">
+                    <option value="Contact with the creator">
+                    <option value="Support the creator">
+                    <option value="Contribute with the webpage">
+                </datalist>
+            </div>
+            <div class="form-line">
+                <label class="form-label message-label" for="message">Your message:</label>
+                <textarea rows="5" name="message" id="message"
+                          class="form-input"></textarea>
+            </div>
+            </fieldset>
+            <div class="form-line">
+                <p class="check-simbol"></p>
+                <button class="form-button" type="button">SUBMIT</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+<!--end page-->
+<!--start footer-->
+<div class="footer">
+    <div class="legal">
+        <p>&copy;2022 Web travelling. All rights reserved. Designed by
+            <a href="mailto:alvaro.castro@tprs.stud.vu.lt">
+                Alvaro de Castro Escribano</a></p>
+    </div>
+    <div class="resources">
+        <a href="sitemap.html">Page Map</a>
+    </div>
+    <div class="contact-buttons">
+        <ul>
+            <li><a href="https://www.linkedin.com/in/alvaro-de-castro-escribano/" class="social-media"><img src="images/Linkedin.png" alt="linkedin"></a></li>
+            <li><a href="contact.html" class="social-media"><img src="images/instagram.png" alt="instagram"></a></li>
+            <li><a href="contact.html" class="social-media"><img src="images/facebook.png" alt="facebook"></a></li>
+            <li><a href="contact.html" class="social-media"><img src="images/twitter.png" alt="twitter"></a></li>
+            <li><a href="mailto:alvaro.castro@tprs.stud.vu.lt"
+                   class="social-media"><img src="images/email.png" alt="email">
+            </a></li>
+        </ul>
+    </div>
+
+</div>
+<!--end footer-->
+</body>
+</html>

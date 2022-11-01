@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Destinations for you</title>
+    <meta name="keywords" content="travelling, world, trip, travel in
+                        europe, destination">
+    <meta name="author" content="Alvaro de Castro Escribano">
+    <meta name="description" content="The Total TTrip website
+                provides all the useful information to travel around
+                the world, and also previous experiences in the most
+                amazing places of Europe">
+    <meta property="article:published_time" content="2022-10-10">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/original.css" rel="stylesheet" type="text/css">
+    <script src="scripts/scripts.js"></script>
+</head>
+<body>
+<!--start header-->
+<div class="header">
+    <div id="logo">
+        <h1><a href="index.html">Total Trip</a></h1>
+    </div>
+    <div id="navbar">
+        <ul>
+            <li><a href="index.html" class="navbar-button">Home</a></li>
+            <li class="dropdown">
+                <a href="destinations.html" class="navbar-button">Destinations</a>
+                <div class="dropdown-content">
+                    <a href="destinations.html#spain">Spain</a>
+                    <a href="destinations.html#italy">Italy</a>
+                    <a href="destinations.html#germany">Germany</a>
+                    <a href="destinations.html#portugal">Portugal</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="experiences.html" class="navbar-button">Experiences</a>
+                <div class="dropdown-content">
+                    <a href="experiences/rome.html">Rome</a>
+                </div>
+            </li>
+            <li><a href="contact.html" class="navbar-button">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <div class="search">
+        <input type="text" class="search-box"
+               placeholder="What are you looking for?">
+        <button type="submit" class="search-button" onclick="alertNoResult()">
+            <img class="search-icon" src="images/searchIcon.png"
+                 alt="search_icon">
+        </button>
+    </div>
+</div>
+<!--end header-->
+<!--start page-->
+<div class="page" id="destinations">
+    <h2>Destinations</h2>
+    <input type="text" id="userImput" onkeyup="destinationFilter()"
+    placeholder="Search by countries..." title="Type a country"
+    class="filter-box">
+    <div class="country" id="spain">
+        <h3>Spain</h3>
+        <div class="destination">
+            <a href="#">
+                <div class="grey-box">Madrid</div>
+                <img src="images/madrid.jpg" alt="Madrid">
+            </a>
+        </div>
+    </div>
+    <div class="country" id="italy">
+        <h3>Italy</h3>
+        <div class="destination">
+            <a href="#">
+                <div class="grey-box">Venice</div>
+                <img src="images/venice.jpg" alt="Venice">
+            </a>
+        </div>
+        <div class="destination">
+            <a href="#">
+                <div class="grey-box">Rome</div>
+                <img src="images/rome.jpg" alt="Rome">
+            </a>
+        </div>
+    </div>
+    <div class="country" id="germany">
+        <h3>Germany</h3>
+        <div class="destination">
+            <a href="#">
+                <div class="grey-box">Berlin</div>
+                <img src="images/berlin.jpg" alt="Berlin">
+            </a>
+        </div>
+    </div>
+    <div class="country" id="portugal">
+        <h3>Portugal</h3>
+        <div class="destination">
+            <a href="#">
+                <div class="grey-box">Lisbon</div>
+                <img src="images/lisbon.jpg" alt="Lisbon">
+            </a>
+        </div>
+    </div>
+</div>
+
+<!--end page-->
+<!--start footer-->
+<div class="footer">
+    <div class="legal">
+        <p>&copy;2022 Web travelling. All rights reserved. Designed by
+            <a href="mailto:alvaro.castro@tprs.stud.vu.lt">
+                Alvaro de Castro Escribano</a></p>
+    </div>
+    <div class="resources">
+        <a href="sitemap.html">Page Map</a>
+    </div>
+    <div class="contact-buttons">
+        <ul>
+            <li><a href="https://www.linkedin.com/in/alvaro-de-castro-escribano/" class="social-media"><img src="images/Linkedin.png" alt="linkedin"></a></li>
+            <li><a href="contact.html" class="social-media"><img src="images/instagram.png" alt="instagram"></a></li>
+            <li><a href="contact.html" class="social-media"><img src="images/facebook.png" alt="facebook"></a></li>
+            <li><a href="contact.html" class="social-media"><img src="images/twitter.png" alt="twitter"></a></li>
+            <li><a href="mailto:alvaro.castro@tprs.stud.vu.lt"
+                   class="social-media"><img src="images/email.png" alt="email">
+            </a></li>
+        </ul>
+    </div>
+
+</div>
+<!--end footer-->
+</body>
+</html>
