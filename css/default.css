@@ -56,6 +56,11 @@ h5 {
     border-radius: 5%;
 
 }
+
+#logo img {
+    width: 220px;
+    transform: translate(0,10%);
+}
 #logo h1 {
     height: inherit;
     margin: 0;
@@ -176,7 +181,7 @@ h5 {
 
 .page {
     /*margin: 100px;*/
-    padding: 170px 170px 0 170px;
+    padding: 100px 170px 0 170px;
     height: fit-content;
     overflow: hidden;
 }

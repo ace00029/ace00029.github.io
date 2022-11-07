@@ -14,6 +14,7 @@ function destinationFilter() {
         }
     }
 }
+
 function checkCountry(val) {
     var element = document.getElementById('alt_country');
     if (val=='other')
